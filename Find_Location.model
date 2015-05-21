@@ -1,0 +1,529 @@
+{
+    "values": {
+        "inputs": {
+            "VECTORLAYER_ROADS": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 322.97016155536375, 
+                            "x": 120.37965179304288
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_ROADS", 
+                            "shapetype": [
+                                1
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Roads"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "VECTORLAYER_YOURLOCATION": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 157.3515315625736, 
+                            "x": 120.95464430805117
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_YOURLOCATION", 
+                            "shapetype": [
+                                0
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "User location"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "VECTORLAYER_LANDSTATUS": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 58.387568978066405, 
+                            "x": 120.09363248778737
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_LANDSTATUS", 
+                            "shapetype": [
+                                2
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Land Status"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "VECTORLAYER_SURFACEGEOLOGY": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 409.02467696240103, 
+                            "x": 116.97512483589007
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_SURFACEGEOLOGY", 
+                            "shapetype": [
+                                2
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Surface Geology"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "STRING_FORMATIONKEYWORD": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 497.5603938352921, 
+                            "x": 114.10175471425468
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "STRING_FORMATIONKEYWORD", 
+                            "default": "", 
+                            "value": null, 
+                            "multiline": false, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Formation Keyword"
+                        }, 
+                        "class": "processing.core.parameters.ParameterString"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "NUMBER_MAXIMUMDISTANCETOSEARCH": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 235.54879554014963, 
+                            "x": 121.21166445558326
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "NUMBER_MAXIMUMDISTANCETOSEARCH", 
+                            "min": 0, 
+                            "default": 10000, 
+                            "max": 100000, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "description": "Maximum distance to search"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Find_location", 
+        "name": "Find_location_2", 
+        "algs": {
+            "QGISINTERSECTION_1": {
+                "values": {
+                    "name": "QGISINTERSECTION_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 207.36369166223605, 
+                            "x": 773.5013580312232
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT2": {
+                            "values": {
+                                "alg": "QGISFIXEDDISTANCEBUFFER_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISEXTRACTBYATTRIBUTE_2", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:intersection", 
+                    "description": "Intersection"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "MODELERFIND_ROADS_1": {
+                "values": {
+                    "name": "MODELERFIND_ROADS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT_ALGQGISUNION_1": {
+                            "values": {
+                                "description": "Public roads", 
+                                "pos": {
+                                    "values": {
+                                        "y": 511.4231044967702, 
+                                        "x": 1408.4241213121359
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 466.4231044967702, 
+                            "x": 1208.4241213121359
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "VECTORLAYER_ROADS": {
+                            "values": {
+                                "name": "VECTORLAYER_ROADS"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "VECTORLAYER_DESIREDAREA": {
+                            "values": {
+                                "alg": "QGISFIXEDDISTANCEBUFFER_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "VECTORLAYER_PUBLICLAND": {
+                            "values": {
+                                "alg": "QGISMULTIPARTTOSINGLEPARTS_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "modeler:find_roads", 
+                    "description": "Find_Roads"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISEXTRACTBYLOCATION_1": {
+                "values": {
+                    "name": "QGISEXTRACTBYLOCATION_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Accessible public land with access to the specified formation", 
+                                "pos": {
+                                    "values": {
+                                        "y": 628.2868982325101, 
+                                        "x": 1810.9241251378705
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 583.2868982325101, 
+                            "x": 1610.9241251378705
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISEXTRACTBYLOCATION_4", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "PREDICATE": [
+                            "intersects"
+                        ], 
+                        "INTERSECT": {
+                            "values": {
+                                "alg": "MODELERFIND_ROADS_1", 
+                                "output": "OUTPUT_ALGQGISUNION_1"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:extractbylocation", 
+                    "description": "Extract by location"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISMULTIPARTTOSINGLEPARTS_1": {
+                "values": {
+                    "name": "QGISMULTIPARTTOSINGLEPARTS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Public land", 
+                                "pos": {
+                                    "values": {
+                                        "y": 354.4649638526543, 
+                                        "x": 1177.0623136710353
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 309.4649638526543, 
+                            "x": 977.0623136710353
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISINTERSECTION_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:multiparttosingleparts", 
+                    "description": "Multipart to singleparts"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISFIXEDDISTANCEBUFFER_1": {
+                "values": {
+                    "name": "QGISFIXEDDISTANCEBUFFER_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Selected Area", 
+                                "pos": {
+                                    "values": {
+                                        "y": 137.39052972229808, 
+                                        "x": 845.1697055516264
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 219.44972408773452, 
+                            "x": 443.7213825553247
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "name": "VECTORLAYER_YOURLOCATION"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "SEGMENTS": 10.0, 
+                        "DISSOLVE": true, 
+                        "DISTANCE": {
+                            "values": {
+                                "name": "NUMBER_MAXIMUMDISTANCETOSEARCH"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:fixeddistancebuffer", 
+                    "description": "Fixed distance buffer"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISEXTRACTBYLOCATION_4": {
+                "values": {
+                    "name": "QGISEXTRACTBYLOCATION_4", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Public land with access to the specified formation", 
+                                "pos": {
+                                    "values": {
+                                        "y": 628.7066649545825, 
+                                        "x": 1418.1779466991186
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 583.7066649545825, 
+                            "x": 1218.1779466991186
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISMULTIPARTTOSINGLEPARTS_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "PREDICATE": [
+                            "intersects"
+                        ], 
+                        "INTERSECT": {
+                            "values": {
+                                "alg": "QGISEXTRACTBYATTRIBUTE_3", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:extractbylocation", 
+                    "description": "Extract by location"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISEXTRACTBYATTRIBUTE_3": {
+                "values": {
+                    "name": "QGISEXTRACTBYATTRIBUTE_3", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 479.7265836779011, 
+                            "x": 450.3918515330472
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "OPERATOR": 7, 
+                        "INPUT": {
+                            "values": {
+                                "name": "VECTORLAYER_SURFACEGEOLOGY"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "VALUE": {
+                            "values": {
+                                "name": "STRING_FORMATIONKEYWORD"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "FIELD": "UNIT_NAME"
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:extractbyattribute", 
+                    "description": "Extract by attribute"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISEXTRACTBYATTRIBUTE_2": {
+                "values": {
+                    "name": "QGISEXTRACTBYATTRIBUTE_2", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 115.67378648503097, 
+                            "x": 442.5349965070038
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "OPERATOR": 0, 
+                        "INPUT": {
+                            "values": {
+                                "name": "VECTORLAYER_LANDSTATUS"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "VALUE": "1", 
+                        "FIELD": "Public_acc"
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:extractbyattribute", 
+                    "description": "Extract by attribute"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
